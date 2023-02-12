@@ -1,0 +1,150 @@
+body {
+    height: 100vh;
+    background: linear-gradient(to bottom, rgb(23, 30, 81), rgb(136, 88, 155));
+    background-attachment: fixed;
+    color: rgba(255, 255, 255, 0.897);
+    font-family: sans-serif;
+}
+
+
+/* .blurred {
+    filter: blur(4px);
+    overflow: hidden;
+} */
+
+.location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.city-name {
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem;
+}
+
+.header-current-temp {
+    font-size: 2rem;
+}
+
+.left-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+    padding: 1rem;
+    border-right: 2px solid rgb(223, 223, 223);
+}
+
+.right-header {
+    display: grid;
+    width: 10%;
+    gap: .5rem;
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(1, auto);
+}
+
+.info-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.label {
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.value-sub-info {
+    font-weight: lighter;
+    font-size: 0.75rem;
+}
+
+.day-section {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, 75px); */
+    /* grid-template-columns: repeat(2, auto); */
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: auto;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem;
+    margin-top: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(2, auto);
+    }
+}
+
+.day-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: .25rem;
+    padding: 0.5rem;
+    background-color: rgb(42, 51, 128);
+}
+
+.day-card img {
+    filter: invert(100%);
+    width: 30px;
+}
+
+.day-card-day {
+    font-size: 0.75rem;
+    color: rgb(226, 239, 250);
+    margin-top: .5rem;
+    padding-bottom: 7px;
+}
+
+.stats-icon {
+    padding-bottom: 2px;
+}
+
+.temperature {
+    border: none;
+}
+
+.details {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.226);
+}
+
+.details-legend {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.forecast {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.226);
+}
+
+.forecast-legend {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.hour-section {
+    width: 100%;
+    text-align: center;
+    border-spacing: 0;
+    margin-top: 15px;
+}
+
+.hour-row>td {
+    padding: 0.25rem 0.5rem;
+}

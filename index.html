@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New App</title>
+</head>
+
+<body class="blurred">
+    <header class="location">
+        <div class="city-name">New York</div>
+    </header>
+
+    <fieldset class="temperature">
+        <section class="header">
+            <div class="left-header">
+                <img class="weather-icon" src="icons/static/day.svg" data-current-icon>
+                <div class="header-current-temp">
+                    <span data-current-temp>31</span>&deg;
+                </div>
+            </div>
+            <div class="right-header">
+                <div class="info-group">
+                    <div class="label">High</div>
+                    <div class="value"><span data-current-high>32</span>&deg;</div>
+                </div>
+                <div class="info-group">
+                    <div class="label">Low</div>
+                    <div class="value"><span data-current-low>19</span>&deg;</div>
+                </div>
+            </div>
+        </section>
+    </fieldset>
+
+    <fieldset class="details">
+        <legend class="details-legend">Details</legend>
+        <section class="day-section" data-day-section>
+            <div class="day-card">
+                <img src="icons\stats\temperature-half-svgrepo-com.svg" class="stats-icon">
+                <div class="day-card-day">Feels like</div>
+                <div><span>29</span>&deg;</div>
+            </div>
+            <div class="day-card">
+                <img src="icons\stats\wind-svgrepo-com.svg" class="stats-icon">
+                <div class="day-card-day">Wind</div>
+                <div><span>11</span><span class="value-sub-info"> km/h</span></div>
+            </div>
+            <div class="day-card">
+                <img src="icons\stats\humidity-svgrepo-com.svg" class="stats-icon">
+                <div class="day-card-day">Humidity</div>
+                <div><span>61</span><span class="value-sub-info"> %</span></div>
+            </div>
+            <div class="day-card">
+                <img src="icons\stats\pressure-svgrepo-com.svg" class="stats-icon">
+                <div class="day-card-day">Pressure</div>
+                <div><span>2</span><span class="value-sub-info"> atm</span></div>
+            </div>
+        </section>
+    </fieldset>
+
+    <fieldset class="forecast">
+        <legend class="forecast-legend">Next 5 Days</legend>
+        <table class="hour-section">
+            <tbody data-hour-section>
+                <tr class="hour-row">
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Thursday</div>
+                            <div>3 PM</div>
+                        </div>
+                    </td>
+                    <td><img src="icons\static\rainy-6.svg"></td>
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Temp</div>
+                            <div><span>31</span>&deg;</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Feels like</div>
+                            <div><span>25</span>&deg;</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Wind</div>
+                            <div><span>6</span><span class="value-sub-info">km/h</span></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Pressure</div>
+                            <div><span>0</span><span class="value-sub-info">atm</span></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="hour-row">
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Thursday</div>
+                            <div>3 PM</div>
+                        </div>
+                    </td>
+                    <td><img src="icons\static\rainy-7.svg"></td>
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Temp</div>
+                            <div><span>31</span>&deg;</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Feels like</div>
+                            <div><span>25</span>&deg;</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Wind</div>
+                            <div><span>6</span><span class="value-sub-info">km/h</span></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Pressure</div>
+                            <div><span>0</span><span class="value-sub-info">atm</span></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="hour-row">
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Thursday</div>
+                            <div>3 PM</div>
+                        </div>
+                    </td>
+                    <td><img src="icons\static\snowy-5.svg"></td>
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Temp</div>
+                            <div><span>31</span>&deg;</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Feels like</div>
+                            <div><span>25</span>&deg;</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Wind</div>
+                            <div><span>6</span><span class="value-sub-info">km/h</span></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Pressure</div>
+                            <div><span>0</span><span class="value-sub-info">atm</span></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="hour-row">
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Thursday</div>
+                            <div>3 PM</div>
+                        </div>
+                    </td>
+                    <td><img src="icons\static\snowy-6.svg"></td>
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Temp</div>
+                            <div><span>31</span>&deg;</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Feels like</div>
+                            <div><span>25</span>&deg;</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Wind</div>
+                            <div><span>6</span><span class="value-sub-info">km/h</span></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Pressure</div>
+                            <div><span>0</span><span class="value-sub-info">atm</span></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="hour-row">
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Thursday</div>
+                            <div>3 PM</div>
+                        </div>
+                    </td>
+                    <td><img src="icons\static\rainy-6.svg"></td>
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Temp</div>
+                            <div><span>31</span>&deg;</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Feels like</div>
+                            <div><span>25</span>&deg;</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Wind</div>
+                            <div><span>6</span><span class="value-sub-info">km/h</span></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="info-group">
+                            <div class="label">Pressure</div>
+                            <div><span>0</span><span class="value-sub-info">atm</span></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>
+
+    <!-- will i need them? -->
+    <template class="day-card-template">
+        <div class="day-card">
+            <img data-icon class="weather-icon">
+            <div class="day-card-day" data-date></div>
+            <div><span data-temp></span><span>&deg;</span></div>
+        </div>
+    </template>
+    <template class="hour-row-template">
+        <tr class="hour-row">
+            <td>
+                <div class="info-group">
+                    <div class="label" data-day></div>
+                    <div data-time></div>
+                </div>
+            </td>
+            <td><img data-icon></td>
+            <td>
+                <div class="info-group">
+                    <div class="label">Temp</div>
+                    <div><span data-temp></span><span class="value-sub-info">&deg;</span></div>
+                </div>
+            </td>
+            <td>
+                <div class="info-group">
+                    <div class="label">Feels like</div>
+                    <div><span data-fl-temp></span><span class="value-sub-info">&deg;</span></div>
+                </div>
+            </td>
+            <td>
+                <div class="info-group">
+                    <div class="label">Wind</div>
+                    <div><span data-wind></span><span class="value-sub-info">km/h</span></div>
+                </div>
+            </td>
+            <td>
+                <div class="info-group">
+                    <div class="label">Precip</div>
+                    <div><span data-precip></span><span class="value-sub-info">atm</span></div>
+                </div>
+            </td>
+        </tr>
+    </template>
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>
