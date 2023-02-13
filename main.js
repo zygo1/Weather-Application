@@ -9,6 +9,7 @@ function successful({ coords }) {
     let lat = coords.latitude;
     let long = coords.longitude;
     let timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    // https://api.open-meteo.com/v1/forecast?latitude=10&longitude=10&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,weathercode,surface_pressure,windspeed_10m&daily=weathercode,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,windspeed_10m_max&current_weather=true&timeformat=unixtime&timezone=Europe%2FBerlin&past_days=5`;
     let url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,weathercode,surface_pressure,windspeed_10m&daily=weathercode,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,windspeed_10m_max&current_weather=true&timeformat=unixtime&timezone=${timezone}&past_days=5`;
     let nomUrl = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${long}`;
     getArea(nomUrl).then(render);
