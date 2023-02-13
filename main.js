@@ -1,30 +1,17 @@
 "use strict"
 import { getWeather } from "/weather.js";
+import { getArea } from "./geolocation.js";
+import { icon_map } from "./iconmap.js";
 
-// Create a Map for the icons
-const icon_map = new Map();
-addMapping([0, 1], 'day');
-addMapping([2], 'cloudy-day');
-addMapping([3], 'cloudy');
-addMapping([51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82], 'rainy');
-addMapping([71, 73, 75, 77, 85, 86], 'snowy');
-addMapping([95, 96, 99], 'thunder');
-
-function addMapping(values, icon) {
-    values.forEach(value => {
-        icon_map.set(value, icon)
-    });
-}
-
-// stats for testing
-
+// Geolocation | Weather
 navigator.geolocation.getCurrentPosition(successful, failed);
-
 function successful({ coords }) {
     let lat = coords.latitude;
     let long = coords.longitude;
     let timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     let url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,weathercode,surface_pressure,windspeed_10m&daily=weathercode,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,windspeed_10m_max&current_weather=true&timeformat=unixtime&timezone=${timezone}&past_days=5`;
+    let nomUrl = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${long}`;
+    getArea(nomUrl).then(render);
     getWeather(url).then(renderWeather);
 }
 
@@ -32,15 +19,19 @@ function failed() {
     alert("There was an error getting your location.")
 }
 
-// let url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,weathercode,surface_pressure,windspeed_10m&daily=weathercode,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,windspeed_10m_max&current_weather=true&timezone=${timezone}&past_days=5`;
+// Geolocation | City
+const cityLabel = document.querySelector('.city-name');
+function render(city) {
+    cityLabel.textContent = city.city;
+}
 
+// Rendering
 function renderWeather({ current, daily }) {
     renderCurrentWeather(current);
     renderDailyWeather(current, daily);
 }
 
 const currentIcon = document.querySelector("[data-current-icon]")
-
 function renderCurrentWeather(current) {
     currentIcon.src = `icons/weather/${icon_map.get(current.iconCode)}.svg`;
     document.querySelector("[data-current-temp]").textContent = current.currentTemp;
