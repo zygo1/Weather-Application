@@ -41,6 +41,7 @@ function renderCurrentWeather(current) {
     document.querySelector("[data-wind]").textContent = current.windSpeed;
     document.querySelector("[data-humid]").textContent = current.humid;
     document.querySelector("[data-pressure]").textContent = current.press;
+    document.querySelector(".blur").classList.remove("blur")
 }
 
 const divs = document.querySelectorAll('[day-of-the-week]');

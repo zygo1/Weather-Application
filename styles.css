@@ -8,12 +8,13 @@ body {
 
 .location {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 .city-name {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 100;
 }
 
@@ -25,10 +26,10 @@ body {
 }
 
 .header-current-temp {
-    font-size: 2rem;
+    font-size: 2.875rem;
 }
 
-.left-header {
+.left-side {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +38,7 @@ body {
     border-right: 2px solid rgb(223, 223, 223);
 }
 
-.right-header {
+.right-side {
     display: grid;
     width: 10%;
     gap: .5rem;
@@ -45,7 +46,11 @@ body {
     grid-template-rows: repeat(1, auto);
 }
 
-.info-group {
+.blur {
+    filter: blur(4px);
+}
+
+.info {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,20 +58,20 @@ body {
 }
 
 .label {
-    font-size: 0.8rem;
+    font-size: 0.850rem;
     font-weight: 600;
 }
 
-.value-sub-info {
+.sub-info {
     font-weight: lighter;
-    font-size: 0.75rem;
+    font-size: .7rem;
 }
 
 .day-section {
     display: grid;
     /* grid-template-columns: repeat(auto-fit, 75px); */
     /* grid-template-columns: repeat(2, auto); */
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(4, 95px);
     grid-template-rows: auto;
     gap: 1rem;
     justify-content: center;
@@ -96,7 +101,7 @@ body {
 }
 
 .day-card-day {
-    font-size: 0.75rem;
+    font-size: .8rem;
     color: rgb(226, 239, 250);
     margin-top: .5rem;
     padding-bottom: 7px;
@@ -117,7 +122,7 @@ body {
 
 .details-legend {
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: .875rem;
     font-weight: 600;
 }
 
@@ -128,7 +133,7 @@ body {
 
 .forecast-legend {
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: .875rem;
     font-weight: 600;
 }
 
@@ -139,6 +144,6 @@ body {
     margin-top: 15px;
 }
 
-.hour-row>td {
+.day-row>td {
     padding: 0.25rem 0.5rem;
 }

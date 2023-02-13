@@ -8,25 +8,25 @@
     <title>New App</title>
 </head>
 
-<body>
+<body class="blur">
     <header class="location">
-        <div class="city-name">New York</div>
+        <div class="city-name">City</div>
     </header>
 
     <fieldset class="temperature">
         <section class="header">
-            <div class="left-header">
+            <div class="left-side">
                 <img class="weather-icon" src="" data-current-icon>
                 <div class="header-current-temp">
                     <span data-current-temp>31</span>&deg;
                 </div>
             </div>
-            <div class="right-header">
-                <div class="info-group">
+            <div class="right-side">
+                <div class="info">
                     <div class="label">High</div>
                     <div class="value"><span data-current-high>32</span>&deg;</div>
                 </div>
-                <div class="info-group">
+                <div class="info">
                     <div class="label">Low</div>
                     <div class="value"><span data-current-low>19</span>&deg;</div>
                 </div>
@@ -45,17 +45,17 @@
             <div class="day-card">
                 <img src="icons\stats\wind-svgrepo-com.svg" class="stats-icon">
                 <div class="day-card-day">Wind</div>
-                <div><span data-wind>11</span><span class="value-sub-info"> km/h</span></div>
+                <div><span data-wind>11</span><span class="sub-info"> km/h</span></div>
             </div>
             <div class="day-card">
                 <img src="icons\stats\humidity-svgrepo-com.svg" class="stats-icon">
                 <div class="day-card-day">Humidity</div>
-                <div><span data-humid>61</span><span class="value-sub-info"> %</span></div>
+                <div><span data-humid>61</span><span class="sub-info"> %</span></div>
             </div>
             <div class="day-card">
                 <img src="icons\stats\pressure-svgrepo-com.svg" class="stats-icon">
                 <div class="day-card-day">Pressure</div>
-                <div><span data-pressure>2</span><span class="value-sub-info"> atm</span></div>
+                <div><span data-pressure>2</span><span class="sub-info"> atm</span></div>
             </div>
         </section>
     </fieldset>
@@ -64,133 +64,133 @@
         <legend class="forecast-legend">Next 5 Days</legend>
         <table class="hour-section">
             <tbody data-hour-section>
-                <tr class="hour-row">
+                <tr class="day-row">
                     <td>
-                        <div class="info-group">
+                        <div class="info">
                             <div class="label" day-of-the-week></div>
                         </div>
                     </td>
-                    <td><img forecast-icon src="icons\static\rainy-6.svg"></td>
+                    <td><img forecast-icon></td>
                     <td>
-                        <div class="info-group">
+                        <div class="info">
                             <div class="label">Temperature</div>
                             <div><span data-temp>31</span>&deg;</div>
                         </div>
                     </td>
                     <td>
-                        <div class="info-group">
+                        <div class="info">
                             <div class="label">Feels like</div>
                             <div><span data-feels>25</span>&deg;</div>
                         </div>
                     </td>
                     <td>
-                        <div class="info-group">
+                        <div class="info">
                             <div class="label">Wind</div>
-                            <div><span data-wind>6</span><span class="value-sub-info">km/h</span></div>
+                            <div><span data-wind>6</span><span class="sub-info">km/h</span></div>
                         </div>
                     </td>
                 </tr>
-                <tr class="hour-row">
+                <tr class="day-row">
                     <td>
-                        <div class="info-group">
+                        <div class="info">
                             <div class="label" day-of-the-week></div>
                         </div>
                     </td>
-                    <td><img forecast-icon src="icons\static\rainy-7.svg"></td>
+                    <td><img forecast-icon></td>
                     <td>
-                        <div class="info-group">
+                        <div class="info">
                             <div class="label">Temperature</div>
                             <div><span data-temp>31</span>&deg;</div>
                         </div>
                     </td>
                     <td>
-                        <div class="info-group">
+                        <div class="info">
                             <div class="label">Feels like</div>
                             <div><span data-feels>25</span>&deg;</div>
                         </div>
                     </td>
                     <td>
-                        <div class="info-group">
+                        <div class="info">
                             <div class="label">Wind</div>
-                            <div><span data-wind>6</span><span class="value-sub-info">km/h</span></div>
+                            <div><span data-wind>6</span><span class="sub-info">km/h</span></div>
                         </div>
                     </td>
                 </tr>
-                <tr class="hour-row">
+                <tr class="day-row">
                     <td>
-                        <div class="info-group">
+                        <div class="info">
                             <div class="label" day-of-the-week></div>
                         </div>
                     </td>
-                    <td><img forecast-icon src="icons\static\snowy-5.svg"></td>
+                    <td><img forecast-icon></td>
                     <td>
-                        <div class="info-group">
+                        <div class="info">
                             <div class="label">Temperature</div>
                             <div><span data-temp>31</span>&deg;</div>
                         </div>
                     </td>
                     <td>
-                        <div class="info-group">
+                        <div class="info">
                             <div class="label">Feels like</div>
                             <div><span data-feels>25</span>&deg;</div>
                         </div>
                     </td>
                     <td>
-                        <div class="info-group">
+                        <div class="info">
                             <div class="label">Wind</div>
-                            <div><span data-wind>6</span><span class="value-sub-info">km/h</span></div>
+                            <div><span data-wind>6</span><span class="sub-info">km/h</span></div>
                         </div>
                     </td>
                 </tr>
-                <tr class="hour-row">
+                <tr class="day-row">
                     <td>
-                        <div class="info-group">
+                        <div class="info">
                             <div class="label" day-of-the-week></div>
                         </div>
                     </td>
-                    <td><img forecast-icon src="icons\static\snowy-6.svg"></td>
+                    <td><img forecast-icon></td>
                     <td>
-                        <div class="info-group">
+                        <div class="info">
                             <div class="label">Temperature</div>
                             <div><span data-temp>31</span>&deg;</div>
                         </div>
                     </td>
                     <td>
-                        <div class="info-group">
+                        <div class="info">
                             <div class="label">Feels like</div>
                             <div><span data-feels>25</span>&deg;</div>
                         </div>
                     </td>
                     <td>
-                        <div class="info-group">
+                        <div class="info">
                             <div class="label">Wind</div>
-                            <div><span data-wind>6</span><span class="value-sub-info">km/h</span></div>
+                            <div><span data-wind>6</span><span class="sub-info">km/h</span></div>
                         </div>
                     </td>
                 </tr>
-                <tr class="hour-row">
+                <tr class="day-row">
                     <td>
-                        <div class="info-group">
+                        <div class="info">
                             <div class="label" day-of-the-week></div>
                         </div>
                     </td>
-                    <td><img forecast-icon src="icons\static\rainy-6.svg"></td>
+                    <td><img forecast-icon></td>
                     <td>
-                        <div class="info-group">
+                        <div class="info">
                             <div class="label">Temperature</div>
                             <div><span data-temp>31</span>&deg;</div>
                         </div>
                     </td>
                     <td>
-                        <div class="info-group">
+                        <div class="info">
                             <div class="label">Feels like</div>
                             <div><span data-feels>25</span>&deg;</div>
                         </div>
                     </td>
                     <td>
-                        <div class="info-group">
+                        <div class="info">
                             <div class="label">Wind</div>
-                            <div><span data-wind>6</span><span class="value-sub-info">km/h</span></div>
+                            <div><span data-wind>6</span><span class="sub-info">km/h</span></div>
                         </div>
                     </td>
                 </tr>
