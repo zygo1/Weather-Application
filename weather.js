@@ -18,12 +18,13 @@ export async function getWeather(url) {
 function parseCurrentWeather({ current_weather, daily, hourly }) {
     const { temperature: currentTemp,
         windspeed: windSpeed,
+        time: timestamp,
         weathercode: iconCode
     } = current_weather;
 
     const {
         temperature_2m_max: [maxTemp],
-        temperature_2m_min: [minTemp]
+        temperature_2m_min: [minTemp],
     } = daily;
 
     const {
@@ -40,6 +41,7 @@ function parseCurrentWeather({ current_weather, daily, hourly }) {
         windSpeed: Math.round(windSpeed),
         humid,
         press,
+        timestamp,
         iconCode
     }
 }
@@ -50,8 +52,8 @@ function parseDailyWeather({ daily }) {
             timestamp: time * 1000,
             iconCode: daily.weathercode[index],
             maxTemp: Math.round(daily.temperature_2m_max[index],),
-            feelsLike: daily.apparent_temperature_max[index],
-            windSpeed: daily.windspeed_10m_max[index]
+            dayFeelsLike: daily.apparent_temperature_max[index],
+            dayWindSpeed: daily.windspeed_10m_max[index]
         }
     })
 }

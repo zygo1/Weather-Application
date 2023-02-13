@@ -6,12 +6,6 @@ body {
     font-family: sans-serif;
 }
 
-
-/* .blurred {
-    filter: blur(4px);
-    overflow: hidden;
-} */
-
 .location {
     display: flex;
     align-items: center;
