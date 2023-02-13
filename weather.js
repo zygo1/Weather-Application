@@ -51,8 +51,10 @@ function parseDailyWeather({ daily }) {
         return {
             timestamp: time * 1000,
             iconCode: daily.weathercode[index],
-            maxTemp: Math.round(daily.temperature_2m_max[index],),
+            maxTemp: Math.round(daily.temperature_2m_max[index]),
+            minTemp: Math.round(daily.temperature_2m_min[index]),
             dayFeelsLike: daily.apparent_temperature_max[index],
+            dayFeelsLikeMin: daily.apparent_temperature_min[index],
             dayWindSpeed: daily.windspeed_10m_max[index]
         }
     })

@@ -48,10 +48,12 @@ function renderCurrentWeather(current) {
 const divs = document.querySelectorAll('[day-of-the-week]');
 const imgs = document.querySelectorAll('[forecast-icon]');
 const dayTemp = document.querySelectorAll('[data-temp]');
+const dayTempLow = document.querySelectorAll('[data-temp-low]');
 const dayFeel = document.querySelectorAll('[data-feels]');
+const dayFeelLow = document.querySelectorAll("[data-feel-low]");
 const dayWind = document.querySelectorAll('[data-wind]');
 function renderDailyWeather(current, daily) {
-    let days = [], icons = [], temps = [], dayFL = [], dayW = [];
+    let days = [], icons = [], temps = [], tempsLow = [], dayFL = [], dayFLow = [], dayW = [];
     daily.forEach(day => {
         // Day
         const unixTime = day.timestamp;
@@ -62,10 +64,14 @@ function renderDailyWeather(current, daily) {
         // Icon
         const dayIconCode = day.iconCode;
         icons.push(`icons/weather/${icon_map.get(dayIconCode)}.svg`);
-        // Temperature
+        // Temperature High
         temps.push(day.maxTemp);
-        //Feels Like
+        // Temperature Low
+        tempsLow.push(day.minTemp);
+        // Feels Like High
         dayFL.push(day.dayFeelsLike);
+        // Feels Like Low
+        dayFLow.push(day.dayFeelsLikeMin);
         //Wind
         dayW.push(day.dayWindSpeed);
     })
@@ -75,6 +81,8 @@ function renderDailyWeather(current, daily) {
         dayTemp[i].textContent = temps[i];
         dayFeel[i].textContent = dayFL[i];
         dayWind[i].textContent = dayW[i];
+        dayTempLow[i].textContent = tempsLow[i];
+        dayFeelLow[i].textContent = dayFLow[i];
     }
 }
 
