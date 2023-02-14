@@ -9,7 +9,6 @@ function successful({ coords }) {
     let lat = coords.latitude;
     let long = coords.longitude;
     let timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    // https://api.open-meteo.com/v1/forecast?latitude=10&longitude=10&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,weathercode,surface_pressure,windspeed_10m&daily=weathercode,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,windspeed_10m_max&current_weather=true&timeformat=unixtime&timezone=Europe%2FBerlin&past_days=5`;
     let url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,weathercode,surface_pressure,windspeed_10m&daily=weathercode,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,windspeed_10m_max&current_weather=true&timeformat=unixtime&timezone=${timezone}&past_days=5`;
     let nomUrl = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${long}`;
     getArea(nomUrl).then(render);
@@ -18,7 +17,13 @@ function successful({ coords }) {
 
 function failed() {
     alert("There was an error getting your location.")
+    document.querySelector(".blur").classList.remove("blur")
 }
+
+// API | Weather
+// https://api.open-meteo.com/v1/forecast?latitude=10&longitude=10&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,weathercode,surface_pressure,windspeed_10m&daily=weathercode,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,windspeed_10m_max&current_weather=true&timeformat=unixtime&timezone=Europe%2FBerlin&past_days=5`;
+// API | Location Coords
+// https://nominatim.openstreetmap.org/search/Thessaloniki?format=json
 
 // Geolocation | City
 const cityLabel = document.querySelector('.city-name');
@@ -32,6 +37,42 @@ function renderWeather({ current, daily }) {
     renderDailyWeather(current, daily);
 }
 
+// Search
+// With Button Click
+document.querySelector('#search-button').addEventListener('click', function () {
+    const value = document.querySelector('#search').value;
+    getCoords(value);
+})
+
+// With Enter Button
+document.querySelector("#search").addEventListener('keyup', function (e) {
+    if (e.key == 'Enter') {
+        const value = document.querySelector('#search').value;
+        getCoords(value);
+    }
+})
+
+async function getCoords(value) {
+    let timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const urlLoc = `https://nominatim.openstreetmap.org/search/${value}?format=json`;
+    try {
+        const response = await fetch(urlLoc);
+        if (!response.ok) {
+            throw Error();
+        }
+        const data = await response.json();
+        const _lat = data[0].lat;
+        const _lon = data[0].lon;
+        const name = data[0].display_name.split(',')[0];
+        let url = `https://api.open-meteo.com/v1/forecast?latitude=${_lat}&longitude=${_lon}&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,weathercode,surface_pressure,windspeed_10m&daily=weathercode,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,windspeed_10m_max&current_weather=true&timeformat=unixtime&timezone=${timezone}&past_days=5`;
+        getWeather(url).then(renderWeather);
+        cityLabel.textContent = name;
+    }
+    catch (error) {
+        alert('Oops! Something went wrong. Please make sure the city name you entered is correct.')
+    }
+}
+
 const currentIcon = document.querySelector("[data-current-icon]")
 function renderCurrentWeather(current) {
     currentIcon.src = `icons/weather/${icon_map.get(current.iconCode)}.svg`;
@@ -42,7 +83,7 @@ function renderCurrentWeather(current) {
     document.querySelector("[data-wind]").textContent = current.windSpeed;
     document.querySelector("[data-humid]").textContent = current.humid;
     document.querySelector("[data-pressure]").textContent = current.press;
-    document.querySelector(".blur").classList.remove("blur")
+    // document.querySelector(".blur").classList.remove("blur")
 }
 
 const divs = document.querySelectorAll('[day-of-the-week]');
