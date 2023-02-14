@@ -5,7 +5,7 @@ export async function getWeather(url) {
         const response = await fetch(url);
         const data = await response.json();
         // return data
-        console.log(data);
+        // console.log(data);
         return {
             current: parseCurrentWeather(data),
             daily: parseDailyWeather(data),
@@ -26,12 +26,12 @@ function parseCurrentWeather({ current_weather, daily, hourly }) {
     const {
         temperature_2m_max: [maxTemp],
         temperature_2m_min: [minTemp],
+        apparent_temperature_max: [feelsLike]
     } = daily;
 
     const {
         relativehumidity_2m: [humid],
         surface_pressure: [press],
-        apparent_temperature: [feelsLike]
     } = hourly;
 
     return {
@@ -66,6 +66,5 @@ function parseDailyWeather({ daily }) {
 export async function getArea(url) {
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
     return data;
 }

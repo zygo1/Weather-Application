@@ -80,7 +80,7 @@ function renderCurrentWeather(current) {
     document.querySelector("[data-current-high]").textContent = current.highTemp;
     document.querySelector("[data-current-low]").textContent = current.lowTemp;
     document.querySelector("[data-feels-like]").textContent = current.feelsLike;
-    document.querySelector("[data-wind]").textContent = current.windSpeed;
+    document.querySelector("[data-wind-details]").textContent = current.windSpeed;
     document.querySelector("[data-humid]").textContent = current.humid;
     document.querySelector("[data-pressure]").textContent = current.press;
     // document.querySelector(".blur").classList.remove("blur")
@@ -116,6 +116,7 @@ function renderDailyWeather(current, daily) {
         //Wind
         dayW.push(day.dayWindSpeed);
     })
+
     for (let i = 0; i < 5; i++) {
         divs[i].textContent = days[i];
         imgs[i].src = icons[i];
@@ -126,6 +127,3 @@ function renderDailyWeather(current, daily) {
         dayFeelLow[i].textContent = dayFLow[i];
     }
 }
-
-
-

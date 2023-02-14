@@ -26,22 +26,34 @@ label {
 #search {
     border: none;
     border-radius: 8px;
-    width: 150px;
-    height: 23px;
+    width: 160px;
+    height: 30px;
+}
+
+input:focus {
+    transform: scale(1.07) perspective(1px);
+    transition: 0.25s ease-in-out;
+}
+
+input:hover {
+    transform: scale(1.07) perspective(1px);
+    transition: 0.25s ease-in-out;
 }
 
 #search-button {
     border: none;
     border-radius: 35%;
-    height: 23px;
-    width: 25px;
-    padding: 2px;
-    margin: 2px;
+    height: 30px;
+    width: 30px;
+    padding: 6px;
+    margin: 0px 10px 0px 10px;
     outline: none;
 }
 
 #search-button:hover {
-    background-color: rgba(255, 255, 255, 0.603);
+    transition: 0.2s ease-in-out;
+    transform: scale(1.12) perspective(1px);
+    cursor: pointer;
 }
 
 /* ------------------------------------- */
@@ -83,10 +95,6 @@ label {
     grid-template-columns: repeat(1, auto);
     grid-template-rows: repeat(1, auto);
 }
-
-/* .blur {
-    filter: blur(4px);
-} */
 
 .info {
     display: flex;
@@ -134,7 +142,7 @@ label {
 }
 
 .day-card img {
-    filter: invert(100%);
+    filter: invert(100%) brightness(100);
     width: 30px;
 }
 
