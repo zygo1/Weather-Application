@@ -139,6 +139,7 @@ input:hover {
     border-radius: .25rem;
     padding: 0.5rem;
     background-color: rgb(42, 51, 128);
+    /* background-color: rgb(80, 63, 177); */
 }
 
 .day-card img {
