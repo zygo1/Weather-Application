@@ -1,3 +1,8 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
 body {
     height: 100vh;
     background: linear-gradient(to bottom, rgb(23, 30, 81), rgb(136, 88, 155));
@@ -15,7 +20,7 @@ body {
 
 /* ------------------------------------- */
 .search-wrapper {
-    margin: 2px 2px 0px 20px;
+    margin: 7px 5px 0px 20px;
     gap: 10px;
 }
 
@@ -63,7 +68,7 @@ input:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 3px;
+    margin: 7px 0px 0px 7px;
     font-size: 1.7rem;
     font-weight: 100;
 }
@@ -113,7 +118,7 @@ input:hover {
     font-size: .7rem;
 }
 
-.day-section {
+.stats-section {
     display: grid;
     /* grid-template-columns: repeat(auto-fit, 75px); */
     /* grid-template-columns: repeat(2, auto); */
@@ -132,7 +137,7 @@ input:hover {
     }
 }
 
-.day-card {
+.stats-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -142,12 +147,12 @@ input:hover {
     /* background-color: rgb(80, 63, 177); */
 }
 
-.day-card img {
+.stats-card img {
     filter: invert(100%) brightness(100);
     width: 30px;
 }
 
-.day-card-day {
+.stats-card-stat {
     font-size: .8rem;
     color: rgb(226, 239, 250);
     margin-top: .5rem;
@@ -171,6 +176,7 @@ input:hover {
     text-transform: uppercase;
     font-size: .875rem;
     font-weight: 600;
+    margin: 0px 0px 0px 25px;
 }
 
 .forecast {
@@ -182,6 +188,7 @@ input:hover {
     text-transform: uppercase;
     font-size: .875rem;
     font-weight: 600;
+    margin: 0px 0px 0px 25px;
 }
 
 .hour-section {
