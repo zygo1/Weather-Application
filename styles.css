@@ -120,8 +120,6 @@ input:hover {
 
 .stats-section {
     display: grid;
-    /* grid-template-columns: repeat(auto-fit, 75px); */
-    /* grid-template-columns: repeat(2, auto); */
     grid-template-columns: repeat(4, 95px);
     grid-template-rows: auto;
     gap: 1rem;
